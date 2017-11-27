@@ -32,4 +32,9 @@ class User extends Authenticatable
     {
         return $builder->where('email', $email)->where('activation_token', $token);
     }
+
+    public function scopeByEmail(Builder $builder, $email)
+    {
+        return $builder->where('email', $email);
+    }
 }
